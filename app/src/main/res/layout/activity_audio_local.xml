@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_top_audio_local"
+        android:layout_width="match_parent"
+        android:layout_height="47.5dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp">
+
+        <TextView
+            android:id="@+id/textview_label_audio_local"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            tools:ignore="RtlHardcoded,RtlSymmetry" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:alpha="0.1"
+            android:background="@color/gray808080_70" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_middle_audio_local_loading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/relative_layout_top_audio_local">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_animation_view_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_middle_audio_local_no"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/relative_layout_top_audio_local">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="100dp">
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottie_animation_view_no"
+                android:layout_width="270dp"
+                android:layout_height="270dp"
+                android:layout_centerInParent="true"
+                app:lottie_autoPlay="false"
+                app:lottie_loop="false" />
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_retry"
+                android:layout_width="120dp"
+                android:layout_height="36dp"
+                android:layout_below="@+id/lottie_animation_view_no"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/shape_layout_line_radius30">
+
+                <TextView
+                    android:id="@+id/textview_retry"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_middle_audio_local_yes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/relative_layout_top_audio_local">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_above="@+id/relative_layout_in_playing">
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout_audio_local"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview_audio_local"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_position"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="80dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/shape_layout_line_radius30">
+
+                <cn.miracle.dev_miracle_music_android.view.IconFontTextView
+                    android:id="@+id/textview_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relative_layout_in_playing"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/shape_layout_line_radius30">
+
+            <RelativeLayout
+                android:id="@+id/relative_layout_info_in_playing"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@id/relative_layout_in_playing_control"
+                android:background="@drawable/shape_layout_line_radius30">
+
+                <RelativeLayout
+                    android:id="@+id/relative_layout_album_cover_in_playing"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/shape_layout_circular_radius30">
+
+                    <ImageView
+                        android:id="@+id/imageview_album_cover_in_playing"
+                        android:layout_width="41dp"
+                        android:layout_height="41dp"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/shape_imageview_circular_radius30" />
+
+                    <cn.miracle.dev_miracle_music_android.view.AudioRoundProgressView
+                        android:id="@+id/view_progress_in_playing"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
+                        android:layout_centerInParent="true"
+                        app:radius="20dp"
+                        app:strokeColor="@color/pinkFF708F"
+                        app:strokeWidth="2dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_toEndOf="@+id/relative_layout_album_cover_in_playing">
+
+                    <TextView
+                        android:id="@+id/textview_display_name_in_playing"
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_centerInParent="true"
+                        android:gravity="center_vertical|left"
+                        tools:ignore="RtlHardcoded" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/relative_layout_in_playing_control"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:baselineAligned="false">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <cn.miracle.dev_miracle_music_android.view.IconFontTextView
+                        android:id="@+id/textview_prev_in_playing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <cn.miracle.dev_miracle_music_android.view.IconFontTextView
+                        android:id="@+id/textview_play_or_pause_in_playing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <cn.miracle.dev_miracle_music_android.view.IconFontTextView
+                        android:id="@+id/textview_next_in_playing"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
