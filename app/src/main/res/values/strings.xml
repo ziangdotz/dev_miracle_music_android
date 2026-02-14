@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">MIRACLE MUSIC</string>
+
+    <string name="audio_local_label">本地音频</string>
+
+    <string name="retry_label">点击重新加载</string>
+
+    <string name="audio_in_playing_show_label">暂无音频正在播放</string>
+
+</resources>
