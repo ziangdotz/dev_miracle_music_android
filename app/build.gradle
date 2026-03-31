@@ -23,6 +23,7 @@ android {
         }
     }
     compileOptions {
+        /* JDK 版本 */
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
