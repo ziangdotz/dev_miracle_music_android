@@ -205,7 +205,8 @@ public class AudioLocalActivity extends AppCompatActivity implements View.OnClic
     public void initBasicView() {
         labelAudioLocalTextView.setTextSize(18);
         labelAudioLocalTextView.setTextColor(ContextCompat.getColor(this, R.color.black));
-        labelAudioLocalTextView.setTypeface(Typeface.DEFAULT);
+        // Make the label bold: "本地音频"
+        labelAudioLocalTextView.setTypeface(Typeface.DEFAULT_BOLD);
         labelAudioLocalTextView.setText(R.string.audio_local_label);
     }
 
